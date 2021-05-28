@@ -52,10 +52,14 @@ public class ProductService {
 		existingProduct.setPrice(product.getPrice());
 		return repository.save(existingProduct);
 	}
-	
-	public List<Product> findAllExpiredProduct(){
-		
+
+	public List<Product> findAllExpiredProduct() {
 		return repository.findAllExpiredProduct();
+	}
+
+	public String removeAllExpiredProduct() {
+		repository.removeAllExpiredProduct();
+		return "Removed all expired product";
 	}
 
 }

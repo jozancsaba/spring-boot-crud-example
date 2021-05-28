@@ -59,8 +59,12 @@ public class ProductController {
 	
 	@GetMapping("/expiredProducts")
 	public List<Product> expiredProducts(){
-		
 		return service.findAllExpiredProduct();
+	}
+	
+	@DeleteMapping("/deleteAllExpiredProduct")
+	public String removeAllExpiredProduct() {
+		return service.removeAllExpiredProduct();
 	}
 	
 }
